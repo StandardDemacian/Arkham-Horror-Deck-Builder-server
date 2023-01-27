@@ -7,7 +7,7 @@ const router = express.Router()
 //INDEX ALL DECKS
 
 //GET Decks 
-router.get('/deck',requireToken,(req,res,next)=>{
+router.get('/deck', requireToken, (req,res,next)=>{ 
     Deck.find()
         .then(deck => {
             return deck.map(deck => deck)
@@ -43,7 +43,7 @@ router.post('/deck',requireToken,(req,res,next)=>{
 
 //UPDATE 
 //PATCH
-router.patch('/deck/:id',requireToken, (req,res,next)=>{
+router.patch('/deck/:id', requireToken, (req,res,next)=>{
 
     Deck.findById(req.params.id)
     .then((deck)=> {

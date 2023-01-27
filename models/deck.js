@@ -5,17 +5,10 @@ const Schema = mongoose.Schema
 
 const deckSchema = new Schema(
     {
-        name: 
-            { type:String,
-            
-            },
-        Investigator: 
-            { type:String,
-                
-            },
+        name:String,
+        Investigator: String,        
         XP: Number,
-        // cards:[cardsSchema] to-be-implemented
-
+        Cards:[cardSchema] 
     },
     {
         timestamps:true
