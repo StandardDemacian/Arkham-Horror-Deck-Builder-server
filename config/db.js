@@ -1,5 +1,5 @@
 
-const mongooseBaseName = 'baseball-players'
+const mongooseBaseName = 'Arkham-Horror-Decks'
 
 const database = {
 	development: `mongodb://localhost/${mongooseBaseName}-development`,
