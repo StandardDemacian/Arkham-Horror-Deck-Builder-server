@@ -12,6 +12,7 @@ const deckRoutes = require('./routes/deck-routes')
 const userRoutes = require('./routes/user-routes')
 // const cardRoutes = require('./routes/card-routes')
 
+
 mongoose.set('strictQuery', true)
 
 mongoose.connect(db, {
