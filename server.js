@@ -10,7 +10,7 @@ const PORT = 8000
 
 const deckRoutes = require('./routes/deck-routes')
 const userRoutes = require('./routes/user-routes')
-// const cardRoutes = require('./routes/card-routes')
+const cardRoutes = require('./routes/card-routes')
 
 
 mongoose.set('strictQuery', true)
@@ -26,9 +26,11 @@ app.use(cors({origin: `http://127.0.0.1:5500`}))
 
 app.use(express.json())
 
+
+
 app.use(deckRoutes)
 app.use(userRoutes)
-// app.use(cardRoutes)
+app.use(cardRoutes)
 
 app.listen(PORT, () => {
     console.log('listening on '+ PORT)

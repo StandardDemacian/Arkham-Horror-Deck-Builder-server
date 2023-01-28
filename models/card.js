@@ -29,7 +29,9 @@ const cardSchema = new Schema(
             hidden: Boolean,
             permanent: Boolean,
             double_sided: Boolean,
-            url: String
+            url: String,
+            imagesrc: String,
+            backimagesrc: String,
         },
     
     {
