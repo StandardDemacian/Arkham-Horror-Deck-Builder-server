@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
-// const cardSchema = require('./card')
+const Card = require('./card')
+
 
 const Schema = mongoose.Schema
 
@@ -8,7 +9,15 @@ const deckSchema = new Schema(
         name:String,
         Investigator: String,        
         XP: Number,
-        // Cards:[cardSchema] 
+        cards: [{
+            type:mongoose.Schema.Types.ObjectId,
+            ref:'Card'
+        }],
+        author: {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:'User'
+        }
+        
     },
     {
         timestamps:true

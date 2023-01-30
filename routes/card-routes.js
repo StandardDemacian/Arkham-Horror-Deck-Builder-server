@@ -17,23 +17,40 @@ router.get('/card/:name', (req,res,next)=>{
 })
 
 
-// CREATE
-
-// POST /card
-
-// router.post('/card/:deckName', (req, res, next) => {
-// 	const deckName = req.body
 
 
-// 	Deck.findById(deckName)
-// 		.then((deck) => {
-// 			deck.card.push(req.body.card)
+//ADD CARD FUNCTION UI Maybe?
 
-// 			return deck.save()
+
+// get input from command line
+
+// const userInputIdStarship = process.argv[2]
+// const userInputIdCharacter = process.argv[3]
+
+
+// // open connection to db
+// db.once('open', function () {
+// 	// save starship to mongodb
+// 	Starship.findById(userInputIdStarship)
+// 		// printing success or failure
+// 		.then((starship) => {
+// 			// update the starship object with the passed in key and value
+// 			starship.crew.push(userInputIdCharacter)
+
+// 			// then save the starship document in the database
+// 			return starship.save()
 // 		})
-
-// 		.then((deck) => res.status(201).json({ deck: deck }))
-// 		.catch(next)
+// 		.then((starship) => {
+// 			console.log(starship.toJSON())
+// 		})
+// 		.catch(console.error)
+// 		// close connection to db
+// 		.finally(() => db.close())
 // })
+
+// node ./scripts/starship/addCrew.js <id> <key> <value>
+
+
+
 
 module.exports = router

@@ -8,7 +8,7 @@ const router = express.Router()
 
 //GET Decks 
 router.get('/deck', requireToken, (req,res,next)=>{ 
-    Deck.find()
+    Deck.find() //{'author': req.user._id}  need to figure this out tomorrow
         .then(deck => {
             return deck.map(deck => deck)
         })
