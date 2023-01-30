@@ -22,12 +22,7 @@ router.get('/card/:name', (req,res,next)=>{
 
 //ADD CARD FUNCTION UI Maybe?
 
-router.patch('/deck/:id', (req,res,next)=>{
 
-    Deck.findOneAndUpdate({_id:req.body.id}) 
-    {$push: {cards: cardObj}}
-
-})
 
 
 // var objFriends = { fname:"fname",lname:"lname",surname:"surname" };
