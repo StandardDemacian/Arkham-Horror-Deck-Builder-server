@@ -47,7 +47,7 @@ router.post('/deck',requireToken,(req,res,next)=>{
 //UPDATE 
 
 //PATCH
-router.patch('/deck/:id', requireToken, (req,res,next)=>{
+router.patch('/deck/:id', (req,res,next)=>{
 
     Deck.findById(req.params.id)
     .then((deck)=> {
@@ -58,19 +58,24 @@ router.patch('/deck/:id', requireToken, (req,res,next)=>{
 })
 
 //PATCH //ADD CARDS
-router.get("deck/:id",  (req, res, next) => {
-    try {
-      //const risk = await Risk.findById(req.params.riskId).populate();
-      const deck = Deck.findById(req.params._id).populate(
-        "cards"
-      );
-  
-      res.status(200).json(deck);
-    } catch (err) {
-      console.log("Something is Wrong, " + err);
-      res.status(444).send("No risk found with the given criteria!");
-    }
-  });
+
+
+router.patch('/deck/addcard/:id', (req,res,next) => {
+    // find a specific deck in mongodb
+     Deck.findById(req.params.id)
+        .then((deck) => {
+              
+            deck.cards.push(req.body.cardId) 
+            
+            
+            return deck.save()
+        })
+        // printing success or failure
+        .then(() => res.sendStatus(204)
+        
+        )
+       .catch(next)
+    })
 
 
 

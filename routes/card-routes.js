@@ -19,23 +19,4 @@ router.get('/card/:name', (req,res,next)=>{
 
 
 
-
-//ADD CARD FUNCTION UI Maybe?
-
-
-
-
-// var objFriends = { fname:"fname",lname:"lname",surname:"surname" };
-// Friend.findOneAndUpdate(
-//    { _id: req.body.id }, 
-//    { $push: { friends: objFriends  } },
-//   function (error, success) {
-//         if (error) {
-//             console.log(error)
-//         } else {
-//             console.log(success)
-//         }
-//     })
-
-
 module.exports = router
