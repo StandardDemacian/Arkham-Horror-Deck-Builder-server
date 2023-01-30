@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const Card = require('./card')
+const User = require('./user')
 
 
 const Schema = mongoose.Schema
