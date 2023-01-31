@@ -6,7 +6,7 @@ const mongoose = require('mongoose')
 const cors = require ('cors')
 
 const db = require('./config/db')
-const PORT = process.envPORT || 8000
+const PORT = process.env.PORT || 8000
 
 const deckRoutes = require('./routes/deck-routes')
 const userRoutes = require('./routes/user-routes')
