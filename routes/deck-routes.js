@@ -64,10 +64,7 @@ router.patch('/deck/addcard/:id', (req,res,next) => {
     // find a specific deck in mongodb
      Deck.findById(req.params.id)
         .then((deck) => {
-              
             deck.cards.push(req.body.cardId) 
-            
-            
             return deck.save()
         })
         // printing success or failure
