@@ -33,6 +33,7 @@ Promise.all(calls)
 		}
 	}) 
 })
+
 .catch(err => {
 	console.error(err)
 	console.error('there was probably an issue with the rate limit, try again in 10 seconds or check the error messages above.')
