@@ -22,7 +22,7 @@ mongoose.connect(db, {
 
 const app =express()
 
-app.use(cors( `http://127.0.0.1:5500`))
+app.use(cors( `https://standarddemacian.github.io/Arkham-Horror-Deck-Builder-Client/`))
 
 app.use(express.json())
 

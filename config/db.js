@@ -8,6 +8,6 @@ const database = {
 
 const localDb = process.env.TESTENV ? database.test : database.development
 
-const currentDb = process.env.DB_URI || localDb
+const currentDb = process.env.DATABASE_URL || localDb
 
 module.exports = currentDb
