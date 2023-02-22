@@ -15,6 +15,10 @@ const deckSchema = new Schema(
             type:mongoose.Schema.Types.ObjectId,
             ref:'Card'
         }],
+        class: {
+            type: String,
+        enum: ['Rogue','Guardian','Mystic','Seeker','Survivor'],
+        },
         author: {
             type:mongoose.Schema.Types.ObjectId,
             ref:'User'
