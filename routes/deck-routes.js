@@ -19,7 +19,7 @@ router.get('/deck', requireToken, (req,res,next)=>{
         .catch(next)
 })
 
-//SHOW one Deck
+//SHOW one Deck by ID
 
 //GET /deck/:id
 router.get('/deck/:id',requireToken,(req,res,next)=>{
@@ -29,6 +29,17 @@ router.get('/deck/:id',requireToken,(req,res,next)=>{
         })
         .catch(next)
 })
+
+//GET Deck By name 
+// /deck/:name
+
+// router.get('/deck/:name', requireToken,(req,res,next)=>{
+//     Deck.findOne({name:req.params.name})
+//         .then(deck=> {
+//             res.status(200).json({deck: deck})
+//         })
+//         .catch(next)
+// } )
 
 // CREATE
 

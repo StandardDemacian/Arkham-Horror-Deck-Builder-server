@@ -22,7 +22,7 @@ mongoose.connect(db, {
 
 const app =express()
 
-app.use(cors( `http://127.0.0.1:5500`))
+app.use(cors({ origin: process.env.CLIENT_ORIGIN || `http://localhost:3000` }))
 
 app.use(express.json())
 
