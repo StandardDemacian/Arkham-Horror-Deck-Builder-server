@@ -3,7 +3,7 @@ const fs = require('fs')
 const { url } = require('inspector')
 
 
-let baseURL = `https://arkhamdb.com/api/public/card/`
+let baseURL = `https://arkhamdb.com/api/public/cards/?_format=json`
 let cardTotal = 1120
 
 let ids = []
@@ -15,16 +15,21 @@ for(let i = 1000; i < cardTotal; i++) {
 }
 
 // build 20 urls to make calls to, and return array of promises with those urls
-let calls = ids.map(id => `${baseURL}${id}`)
-.map(url => axios.get(url))
+// let calls = ids.map(id => `${baseURL}${id}`)
+// .map(url => axios.get(url))
+
+
+
+
 
 // execute all promises, writing to disk if successful
 
-Promise.all(calls)
-.then(success => {
-	let collectedData = success.map(res => res.data)
+fetch('https://arkhamdb.com/api/public/cards/?_format=json')
+.then((res)=>res.json())
+// .then(data => console.log(data))
+.then(collectedData => {
 	let stringified = JSON.stringify(collectedData)
-	fs.writeFile(__dirname + '/cards.json', stringified, 'utf8', (err) => {
+	fs.writeFile(__dirname + '/cards.json',stringified, 'utf8', (err) => {
 		if(err) {
 			console.error(err)
 		}

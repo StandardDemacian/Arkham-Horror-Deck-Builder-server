@@ -10,6 +10,7 @@ const deckSchema = new Schema(
         name:String,
         Investigator: String,        
         XP: Number,
+        class:String,
         cards: [{
             type:mongoose.Schema.Types.ObjectId,
             ref:'Card'
